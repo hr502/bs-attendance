@@ -5,11 +5,20 @@
 
 環境構築手順
     1. 環境設定フォルダをダウンロードする
-        $ git clone https://hr502/bs-attendance.git
+        $ git clone https://github.com/hr502/bs-attendance.git
     
-    2. 上記でダウンロードしたフォルダ内に移動する
+    2. 上記でダウンロードしたフォルダ内に移動し、起動に必要なファイルを作成、またはインストールする。
+        - backendの設定
+            $ cd ~/[任意のバス]/bs-attendance/backend/src
+            $ composer install
+            $ cp .env.example .env
+            $ php artisan key:generate
+        - frontendの設定
+            $ cd ~/[任意のバス]/bs-attendance/frontend/src
+            $ yarn install
 
     3. コンテナをビルドする
+        $ cd ~/[任意のバス]/bs-attendance
         $ docker compose build 
 
     4. コンテナを起動する
